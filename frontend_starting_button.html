@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pawel's chatbot</title>
+</head>
+
+<style>
+    .container {
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .button {
+        background-color: green;
+        border-radius: 40em;
+        font-size: 2.0rem;
+        font-weight: 700;
+    }
+
+    .button:hover {
+        transform: scale(1.125);
+    }
+</style>
+
+<body>
+    <main>
+        <div class="container">
+            <button class="button" role="button" type="button" id="startButton" onclick="toggleChatBot()">
+                Start Chatting
+            </button>
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            function customAlert(msg, duration) {
+                var styler = document.createElement("div");
+                styler.setAttribute("style", "border: solid 5px Red;width:auto;height:auto;top:50%;left:40%;background-color:#444;color:Silver;margin:10px;text-align:center;");
+                styler.innerHTML = "<h1>" + msg + "</h1>";
+                setTimeout(function () {
+                    styler.parentNode.removeChild(styler);
+                }, duration);
+                document.body.appendChild(styler);
+            }
+
+            function colourButton(buttonColour, buttonText) {
+                document.getElementById("startButton").style.backgroundColor = buttonColour;
+                document.getElementById("startButton").textContent = buttonText;
+            }
+
+            function toggleChatBot() {
+                document.getElementById("startButton").style.backgroundColor = "yellow";
+                document.getElementById("startButton").textContent = "Please wait...";
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:5000/toggle",
+                    success: function (response) {
+                        console.log(response);
+                        if (response == "Assistent thread starting") {
+                            setTimeout(function () { colourButton("red", "Chatbot listening. Click to stop.") }, 2000);
+                        }
+                        if (response == "Previous assistent thread still running") {
+                            setTimeout(function () { colourButton("red", "Chatbot listening. Click to stop.") }, 1000);
+                        }
+                        if (response == "Assistent thread marked to be closed") {
+                            setTimeout(function () { colourButton("green", "Start Chatting") }, 1000);
+                        }
+                    },
+                    error: function (textStatus) {
+                        customAlert("Something went wrong :( Please check if app.py is running.", 4000);
+                        colourButton("green", "Start Chatting");
+                    }
+                });
+            }
+        </script>
+    </main>
+</body>
+
+</html>
