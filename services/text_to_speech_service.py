@@ -12,4 +12,4 @@ def speak_text(text: str) -> None:
     speech = AudioSegment.from_file(fp, format="mp3")
     play(speech)
 
-    #to jest lepszy komentarz
+    #to jest nowy komentarz, 19:01
