@@ -13,3 +13,5 @@ def speak_text(text: str) -> None:
     play(speech)
 
     #to jest nowy komentarz, 19:01
+    #komentarz 19:36
+    
