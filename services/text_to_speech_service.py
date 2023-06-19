@@ -14,4 +14,6 @@ def speak_text(text: str) -> None:
 
     #to jest nowy komentarz, 19:01
     #komentarz 19:36
+    #komentarz edycja 19:42
     #komentarz giga 19:42
+
