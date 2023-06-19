@@ -13,8 +13,7 @@ Playing around with ChatGPT API and stuff, not meant to be a fully functional ap
 3. If required on your machine, open command line and run below command to install all necessary packages:  
 `pip3 install flask flask_cors speech_recognition whisper openai gtts pydub`  
 
-4. Go to \services\chat_gpt_service.py file and insert your own chatGPT key  
-*(or you can use mine for quick testing - it's limit is 1$ per month, so go wild)*  
+4. Go to \services\chat_gpt_service.py file and replace `yourChatGPTKey` placeholder with your actual ChatGPT key  
 
 5. run app.py  
 

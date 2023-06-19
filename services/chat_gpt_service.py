@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "yourChatGPTKey"
 
 
 def get_response(input: str) -> str:
