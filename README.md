@@ -14,6 +14,7 @@ Playing around with ChatGPT API and stuff, not meant to be a fully functional ap
 `pip3 install flask flask_cors speech_recognition whisper openai gtts pydub`  
 
 4. Go to \services\chat_gpt_service.py file and replace `yourChatGPTKey` placeholder with your actual ChatGPT key  
+*(you can create it at https://platform.openai.com/account/api-keys if you have an account on OpenAI)*
 
 5. run app.py  
 
