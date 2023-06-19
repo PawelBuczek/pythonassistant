@@ -11,3 +11,5 @@ def speak_text(text: str) -> None:
     fp.seek(0)
     speech = AudioSegment.from_file(fp, format="mp3")
     play(speech)
+
+    #to jest komentarz
