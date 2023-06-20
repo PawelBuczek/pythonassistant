@@ -2,7 +2,6 @@ from gtts import gTTS
 from io import BytesIO
 from pydub import AudioSegment
 from pydub.playback import play
-sdsdsd
 
 def speak_text(text: str) -> None:
     tts = gTTS(text=text, lang='en')
@@ -14,5 +13,5 @@ def speak_text(text: str) -> None:
 
     #to jest nowy komentarz, 19:01
     #komentarz 19:36
-    #komentarz sfsfs
+    #komentarz b
 
